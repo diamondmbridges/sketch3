@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Untitled</title>
+    <style>
+      #ball {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        background: magenta;
+        box-shadow: 12px 10px #9E0B8F;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ball">
+    </div>
+    <script>
+      let nameObj = "Ball" ///string global variable
+      let speed = 1; //number global variable
+      let moving = true; //boolean global variable
+
+      let x = 100;
+      let y = 100;
+      let dx = speed;
+      let dy = speed;
+
+      function moveBall () {
+        if(moving){
+          x += dx;
+          y += dy;
+        }
+
+
+      }
+    </script>
+  </body>
+</html>
