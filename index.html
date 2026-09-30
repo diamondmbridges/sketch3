@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Untitled</title>
+    <title>Green Floating Stick</title>
     <style>
-      #ball {
-        border-radius: 50%;
+      #stick {
+        border-radius: 10%;
         height: 120px;
-        width: 120px;
+        width: 10px;
         position: absolute;
-        background: magenta;
-        box-shadow: 12px 10px #9E0B8F;
+        background: green;
+        box-shadow: 12px 10px black;
       }
     </style>
   </head>
 
   <body>
-    <div id="ball">
+    <div id="stick">
     </div>
     <script>
-      let nameObj = "Ball" ///string global variable
+      let nameObj = "Stick" ///string global variable
       let speed = 1; //number global variable
       let moving = true; //boolean global variable
 
@@ -27,14 +27,28 @@
       let dx = speed;
       let dy = speed;
 
-      function moveBall () {
-        if(moving){
+      function moveStick () {
+        if (moving) {
           x += dx;
           y += dy;
+          if (x > window.innerWidth - 50 || x < 0) {
+            dx = -dx;
+          }
+          if (y > window.innerHeight - 50 || y < 0) {
+            dy = -dy;
+          }
+
+          stick.style.left = x + "px";
+          stick.style.top = y + "px";
         }
 
-
       }
+
+      function showInfo () {
+        console.log(nameObj, speed, moving);
+      }
+      showInfo();
+      setInterval(moveStick, 20);
     </script>
   </body>
 </html>
